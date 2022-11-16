@@ -1,6 +1,9 @@
 package com.sda.catalin.bookmanagement.utils;
 
 
+import com.sda.catalin.bookmanagement.model.Author;
+import com.sda.catalin.bookmanagement.model.Book;
+import com.sda.catalin.bookmanagement.model.BookReview;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -22,6 +25,9 @@ public class SessionManager extends AbstractSessionManager {
     @Override
     protected void setAnnotatedClasses(Configuration configuration) {
         // Hibernate model will be added here
+        configuration.addAnnotatedClass(Author.class);
+        configuration.addAnnotatedClass(Book.class);
+        configuration.addAnnotatedClass(BookReview.class);
 
     }
 }
