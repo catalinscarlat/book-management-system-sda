@@ -15,7 +15,7 @@ and last name. The system should validate the first name and the last name to no
 The system should generate a new unique identification number for the author.
 
 
-BMS-2: As a user I should be able to view all the authors. Existing authors should be listed on the screen.
+DONE - BMS-2: As a user I should be able to view all the authors. Existing authors should be listed on the screen.
 Each line should show the author id, first name and last name.
 
 BMS-3: As a user I should be able to update an existing author by providing the id of the author and new values of the author

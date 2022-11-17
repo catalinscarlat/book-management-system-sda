@@ -6,11 +6,10 @@ import com.sda.catalin.bookmanagement.repository.AuthorRepositoryImpl;
 import com.sda.catalin.bookmanagement.service.AuthorServiceImpl;
 import com.sda.catalin.bookmanagement.utils.SessionManager;
 
-import java.security.InvalidParameterException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InvalidParameterException {
+    public static void main(String[] args) {
         SessionManager.getSessionFactory();
         AuthorController authorController = new AuthorController(new AuthorServiceImpl(new AuthorRepositoryImpl()));
         Scanner scanner = new Scanner(System.in);
@@ -32,6 +31,10 @@ public class Main {
                     break;
                 case SHOW_ALL_AUTHORS:
                     authorController.showAllAuthors();
+                    break;
+                case UPDATE_AUTHOR:
+                    authorController.updateAuthor();
+                    break;
                 case EXIT:
                     System.out.println("Goodbye!");
                     break;
