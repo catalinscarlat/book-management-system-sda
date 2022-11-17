@@ -13,7 +13,7 @@ public class Author {
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
-    private String last_Name;
+    private String lastName;
 
     // Not required in the current specification
 
@@ -23,9 +23,9 @@ public class Author {
     public Author() {
     }
 
-    public Author(String firstName, String last_Name) {
+    public Author(String firstName, String lastName) {
         this.firstName = firstName;
-        this.last_Name = last_Name;
+        this.lastName = lastName;
     }
 
     public Integer getId() {
@@ -44,12 +44,12 @@ public class Author {
         this.firstName = firstName;
     }
 
-    public String getLast_Name() {
-        return last_Name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+    public void setLastName(String last_Name) {
+        this.lastName = last_Name;
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Author {
         return "Author{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
-                ", last_Name='" + last_Name + '\'' +
+                ", last_Name='" + lastName + '\'' +
                 '}';
     }
 }
