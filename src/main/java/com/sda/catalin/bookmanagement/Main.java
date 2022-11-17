@@ -1,14 +1,18 @@
 package com.sda.catalin.bookmanagement;
 
+import com.sda.catalin.bookmanagement.controller.AuthorController;
 import com.sda.catalin.bookmanagement.menu.UserOption;
+import com.sda.catalin.bookmanagement.repository.AuthorRepositoryImpl;
+import com.sda.catalin.bookmanagement.service.AuthorServiceImpl;
 import com.sda.catalin.bookmanagement.utils.SessionManager;
 
+import java.security.InvalidParameterException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidParameterException {
         SessionManager.getSessionFactory();
-
+        AuthorController authorController = new AuthorController(new AuthorServiceImpl(new AuthorRepositoryImpl()));
         Scanner scanner = new Scanner(System.in);
 
         UserOption userOption;
@@ -22,9 +26,9 @@ public class Main {
                 userOption = UserOption.UNKNOWN;
             }
 
-            switch (userOption){
+            switch (userOption) {
                 case CREATE_AUTHOR:
-                    System.out.println("Not implemented");
+                    authorController.createAuthor();
                     break;
                 case EXIT:
                     System.out.println("Goodbye!");
@@ -36,7 +40,6 @@ public class Main {
                     System.out.println("User option " + userOption + " is not implemented");
                     break;
             }
-
         } while (userOption != UserOption.EXIT);
         SessionManager.shutDown();
     }
