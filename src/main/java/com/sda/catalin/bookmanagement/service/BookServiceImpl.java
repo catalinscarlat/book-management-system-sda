@@ -7,6 +7,7 @@ import com.sda.catalin.bookmanagement.repository.BookRepository;
 import com.sda.catalin.bookmanagement.service.exceptions.EntityNotFoundException;
 
 import java.security.InvalidParameterException;
+import java.util.List;
 import java.util.Optional;
 
 public class BookServiceImpl implements BookService {
@@ -38,4 +39,7 @@ public class BookServiceImpl implements BookService {
         book.setAuthor(author);
         bookRepository.create(book);
     }
+     public List<Book> getAllBooks () {
+        return bookRepository.findAll();
+     }
 }
